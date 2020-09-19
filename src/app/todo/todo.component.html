@@ -1,0 +1,45 @@
+<div class="todo-container">
+  <form
+    (ngSubmit)="!todoForm.invalid && saveTodo()"
+    #todoForm="ngForm"
+    class="form"
+  >
+    <h2>Todo</h2>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <input
+        matInput
+        type="text"
+        #description="ngModel"
+        [(ngModel)]="todo.description"
+        name="description"
+        required="required"
+        minlength="5"
+      />
+      <mat-error *ngIf="todoForm.dirty && description.invalid"
+        >Enter atleast 5 characters in description !</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Target Date</mat-label>
+      <input
+        matInput
+        type="date"
+        #targetDate="ngModel"
+        [ngModel]="todo.targetDate | date: 'yyyy-MM-dd'"
+        (ngModelChange)="todo.targetDate = $event"
+        name="targetDate"
+        required="required"
+      />
+      <mat-error *ngIf="todoForm.dirty && targetDate.invalid"
+        >Enter valid Target Date !</mat-error
+      >
+    </mat-form-field>
+
+    <div class="button-container">
+      <button mat-flat-button type="submit" color="primary">Save</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,31 @@
+<!-- <h1>Welcome!</h1>
+
+<div class="container">Welcome {{name}}. You can manage your todo <a routerLink="/todos">here</a></div>
+
+<div class="container">Get welcome message
+    <button (click)="getWelcomeMessageWithParameter()" class="btn btn-success">Get Welcome message with parameter</button>
+</div>
+
+<div class="container" *ngIf="messageFromService">
+    Welcome message from service: {{messageFromService}}
+</div>
+
+<div class="container" *ngIf="errorResponseMessage">
+    <span class="alert alert-danger">{{errorResponseMessage}}</span>
+</div> -->
+
+<div class="welcome-container">
+  <mat-card class="welcome-card">
+    <mat-card-header>
+      <mat-card-title style="color: green;"
+        >Welcome {{ name | titlecase }}!</mat-card-title
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <h3 style="color: brown;">
+        You can manage your todo
+        <a mat-button color="primary" routerLink="/todos">Here</a>
+      </h3>
+    </mat-card-content>
+  </mat-card>
+</div>

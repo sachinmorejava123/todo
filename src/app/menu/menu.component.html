@@ -1,0 +1,16 @@
+
+<header class="header-container">
+    <nav class="navbar-container">
+        <div class="title"><a class="text-color">Todo</a></div>
+        <div class="primary-nav">
+            <a *ngIf="basicAuthenticationService.isUserLoggedIn()" class="link" (click)="navigateToHome()" >Home</a>
+            <a *ngIf="basicAuthenticationService.isUserLoggedIn()" class="link" routerLink="/todos">Todos</a>
+        </div>
+
+        <div class="secondary-nav">
+            <a *ngIf="!basicAuthenticationService.isUserLoggedIn()" class="link" routerLink="/login">Login</a>
+            <a *ngIf="basicAuthenticationService.isUserLoggedIn()" class="link" routerLink="/logout">Logout</a>
+        </div>
+        
+    </nav>
+</header>

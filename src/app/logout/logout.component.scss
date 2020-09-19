@@ -1,0 +1,10 @@
+.logout-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+    .logout-card {
+        max-width: 400px;
+    }
+}

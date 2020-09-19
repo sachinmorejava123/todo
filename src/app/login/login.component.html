@@ -1,0 +1,43 @@
+<div class="login-container">
+  <form
+    (ngSubmit)="!loginForm.invalid && handelJWTAuthLogin()"
+    #loginForm="ngForm"
+    class="form"
+  >
+    <h2>Login</h2>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input
+        matInput
+        type="text"
+        #user="ngModel"
+        [(ngModel)]="username"
+        name="username"
+        required="required"
+      />
+      <mat-error *ngIf="loginForm.dirty && user.invalid"
+        >Please enter username !</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        type="password"
+        #pass="ngModel"
+        [(ngModel)]="password"
+        name="password"
+        required="required"
+      />
+      <mat-error *ngIf="loginForm.dirty && pass.invalid"
+        >Please enter password !</mat-error
+      >
+    </mat-form-field>
+
+    <div class="button-container">
+      <button mat-flat-button type="submit" color="primary">Login</button>
+    </div>
+  </form>
+</div>
