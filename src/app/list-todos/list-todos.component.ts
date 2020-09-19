@@ -53,12 +53,8 @@ export class ListTodosComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   displayedColumns: string[] = ['id', 'description', 'targetDate', 'isCompleted', 'update', 'delete'];
   todoData: Todo[];
-  dataSource = new MatTableDataSource<Todo>(this.todoData);
+  dataSource: any;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-
-
-
-
   todos: Todo[];
   message: any;
 
@@ -69,6 +65,7 @@ export class ListTodosComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource<Todo>(this.todoData);
     this.dataSource.paginator = this.paginator;
     this.retriveAllTodos();
   }
