@@ -2,7 +2,8 @@
   height: 100%;
   margin-left: 1rem;
   margin-right: 1rem;
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12) !important;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12) !important;
 
   .mat-row:hover {
     background-color: #e4f7fb;
@@ -13,7 +14,7 @@
     padding: 0.5rem 1rem 0.5rem 1rem;
     align-items: center;
     z-index: 999999;
-  
+
     .todo-title {
       font-size: 1.5rem;
       color: blue;
@@ -26,9 +27,7 @@
     ::ng-deep {
       tr.mat-row {
         height: 52px;
-    }
+      }
     }
   }
 }
-
-
